@@ -11,7 +11,7 @@ try:
     r = requests.get('https://www.bitstamp.net/api/ticker/')
     ticker = r.json()
 
-    print('$' + ticker['last'])
+    print('$%.2f' % float(ticker['last']))
 except:
     print('error')
     print('error')
