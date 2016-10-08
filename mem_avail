@@ -1,3 +1,3 @@
-#!/bin/zsh
+#!/bin/bash
 
-printf "%.2f\n" $(( $(grep Av /proc/meminfo | awk '{ print $2 }'). /1024/1024 ))
+awk '/Av/ { printf "%.2f\n",$2 /1024/1024 }' /proc/meminfo
