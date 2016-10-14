@@ -10,7 +10,7 @@ api_url="https://www.bitstamp.net/api/ticker/"
 curl -s "$api_url" | awk -v RS="," '
 /last/ {
     gsub("\"", "")
-    print $2
-    print $2
+    print "$"$2
+    print "$"$2
 }
 '
