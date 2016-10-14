@@ -11,6 +11,5 @@ curl -s "$api_url" | awk -v RS="," '
 /last/ {
     gsub("\"", "")
     print "$"$2
-    print "$"$2
 }
 '
