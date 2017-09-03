@@ -5,9 +5,8 @@ api_url="https://www.bitstamp.net/api/ticker/"
 
 [ "$BLOCK_BUTTON" = "1" ] && xdg-open "$bitcoinity_url"
 
-out="$(curl -s "$api_url")"
 
-if [ $? -ne 0 ]; then
+if ! out="$(curl -s "$api_url")"; then
     echo "error"
     echo "error"
     echo "#ff0000"
