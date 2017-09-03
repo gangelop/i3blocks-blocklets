@@ -13,9 +13,4 @@ if ! out="$(curl -s "$api_url")"; then
     exit 0
 fi
 
-printf "%s" "$out" | awk -v RS="," '
-/last/ {
-    gsub("\"", "")
-    print "$"$2
-}
-'
+echo "$out" | jq -r '.["last"]'
