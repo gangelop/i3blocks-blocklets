@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-bitcoinity_url="http://bitcoinity.org/markets/bitstamp/USD"
+bitcoinity_url="http://bitcoinity.org/markets/hitbtc/USD"
 api_url="https://www.bitstamp.net/api/ticker/"
+symbol="${1:-"BTCUSD"}"
+api_url="https://api.hitbtc.com/api/1/public/$symbol/ticker"
 
 [ "$BLOCK_BUTTON" = "1" ] && xdg-open "$bitcoinity_url"
 
