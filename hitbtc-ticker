@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
-bitcoinity_url="http://bitcoinity.org/markets/hitbtc/USD"
-api_url="https://www.bitstamp.net/api/ticker/"
 symbol="${1:-"BTCUSD"}"
+chart_url="https://hitbtc.com/chart/$symbol"
 api_url="https://api.hitbtc.com/api/1/public/$symbol/ticker"
 
-[ "$BLOCK_BUTTON" = "1" ] && xdg-open "$bitcoinity_url"
+[ "$BLOCK_BUTTON" = "1" ] && xdg-open "$chart_url"
 
 
 if ! out="$(curl -s "$api_url")"; then
