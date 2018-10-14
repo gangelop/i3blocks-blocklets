@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+api_url="https://icanhazip.com"
+
+if ! out="$(curl -s "$api_url")"; then
+    echo "error"
+    echo "error"
+    echo "#ff0000"
+    exit 0
+fi
+
+echo "$out"
