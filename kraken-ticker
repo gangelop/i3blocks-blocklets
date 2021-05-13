@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-symbol="${1:-"XBTUSD"}"
-result_symbol="X${symbol:0:3}Z${symbol:3}"
-api_url="https://api.kraken.com/0/public/Ticker?pair=$symbol"
-#chart_url="??" # Kraken's price graphs can't be derived directly from the trade pair symbol
+pair_altname="${1:-"XXBTZUSD"}"
+pair="${2:-"$pair_altname"}"
+api_url="https://api.kraken.com/0/public/Ticker?pair=$pair_altname"
+#chart_url="??" # Kraken's price graphs can't be derived directly from the trade pair pair
 
 #[ "$BLOCK_BUTTON" = "1" ] && xdg-open "$chart_url"
 
@@ -16,4 +16,4 @@ fi
 
 # "c" is "last trade closed"
 # https://docs.kraken.com/rest/#operation/getTickerInformation
-printf "%.2f\n" "$(echo "$result" | jq -r ".[\"result\"][\"$result_symbol\"][\"c\"][0]")"
+printf "%.2f\n" "$(echo "$result" | jq -r ".[\"result\"][\"$pair\"][\"c\"][0]")"
