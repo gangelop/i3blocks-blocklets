@@ -2,7 +2,7 @@
 
 command=$(basename "$0")
 
-if [ "$1" = "--help" -o "$1" = "-h" ]; then
+if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
     echo "usage:
   $command [--help | -h]
   $command [PAIR | PAIR_ALTNAME] [PAIR]
